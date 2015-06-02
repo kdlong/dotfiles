@@ -1,9 +1,9 @@
 [core]
     editor = vim
 [user]
-    name = Nick Smith
-    email = ncsmith6@wisc.edu
-    github = nsmith-
+    name = Kenneth Long
+    email = kdlong@hep.wisc.edu
+    github = kdlong
 [push]
     default = simple
 [alias]
