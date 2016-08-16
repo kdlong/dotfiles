@@ -18,13 +18,14 @@ fi
 
 export PATH=~/opt/texlive/bin/x86_64-linux:$PATH
 
-if echo $HOSTNAME|grep -q 'login0[24]'; then
+if echo $HOSTNAME|grep -q 'login02'; then
   # SLC5 machine
   echo "Setting up SLC5 tweaks"
   declare -x SCRAM_ARCH="slc5_amd64_gcc462"
   export PATH=~/slc5/bin:$PATH
   export LD_LIBRARY_PATH=~/slc5/lib:$LD_LIBRARY_PATH
   export CPLUS_INCLUDE_PATH=~/slc5/include
+  export TERM=screen
 else
   export PATH=/cms/sw/git/bin:$PATH
   export LD_LIBRARY_PATH=~/lib:$LD_LIBRARY_PATH
@@ -33,7 +34,4 @@ fi
 
 # Make git stop searching before hitting /afs networked directory
 export GIT_CEILING_DIRECTORIES=/afs/hep.wisc.edu
-
-# Aliases
-alias procrastinate="watch -n 30 'condor_q kdlong | tail -n 40'"
 
