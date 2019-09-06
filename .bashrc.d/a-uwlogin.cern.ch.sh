@@ -1,7 +1,7 @@
 # Environment for uwlogin.cern.ch machines
 echo $HOSTNAME|grep -q 'uwlogin.cern.ch' || return
 
-alias git=/cms/sw/git/bin/git
+export PATH=/cms/sw/git/bin:$PATH
 if [ -f /etc/bashrc ]; then
    . /etc/bashrc
 fi
@@ -18,4 +18,4 @@ export GIT_CEILING_DIRECTORIES=/afs/cern.ch
 . /data/cms/setup/bashrc
 
 # Aliases
-alias procrastinate="watch -n 30 'condor_q kdlong | tail -n 40'"
+alias procrastinate="watch -n 30 'condor_q kelong | tail -n 40'"

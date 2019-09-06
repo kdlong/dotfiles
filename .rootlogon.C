@@ -1,9 +1,14 @@
 {
-  if ( gSystem->Getenv("CMSSW_BASE") != 0 ) {
+  std::string cmssw_path = gSystem->Getenv("CMSSW_BASE");
+  if ( cmssw_path != 0) {
     // Provides access to methods in CMSSW framework
-    gSystem->Load("libFWCoreFWLite.so");
-    gROOT->ProcessLineSync("AutoLibraryLoader::enable()");
-    gSystem->Load("libDataFormatsFWLite.so");
+    if ( TString(gSystem->Getenv("CMSSW_VERSION")).Contains("CMSSW_7") ) {
+      gSystem->Load("libFWCoreFWLite.so");
+      gROOT->ProcessLineSync("AutoLibraryLoader::enable();");
+    } else {
+      gSystem->Load("libDataFormatsFWLite.so");
+      gROOT->ProcessLineSync("FWLiteEnabler::enable();");
+    }
   }
 
   // Load dotroot
