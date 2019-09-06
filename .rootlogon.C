@@ -2,7 +2,7 @@
   if ( gSystem->Getenv("CMSSW_BASE") != 0 ) {
     // Provides access to methods in CMSSW framework
     gSystem->Load("libFWCoreFWLite.so");
-    AutoLibraryLoader::enable();
+    gROOT->ProcessLineSync("AutoLibraryLoader::enable()");
     gSystem->Load("libDataFormatsFWLite.so");
   }
 

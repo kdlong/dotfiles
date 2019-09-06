@@ -1,5 +1,6 @@
 [core]
     editor = vim
+	autocrlf = input
 [user]
     name = Kenneth Long
     email = kdlong@hep.wisc.edu

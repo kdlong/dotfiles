@@ -1,5 +1,6 @@
 " General "{{{
 set nocompatible               " be iMproved
+set spell
 
 scriptencoding utf-8           " utf-8 all the way
 set encoding=utf-8

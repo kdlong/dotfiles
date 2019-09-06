@@ -2,10 +2,9 @@
 [ $(uname) == "Darwin" ] || return
 
 # ROOT
-. $(brew --prefix root)/libexec/thisroot.sh
+. /usr/local/bin/root/bin/thisroot.sh
 
 # Some mac-specific aliases
 alias vi=vim
-alias vim="mvim -v"
 alias ls="command ls -G"
 alias ll="ls -lhG"
