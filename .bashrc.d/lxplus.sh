@@ -1,5 +1,5 @@
 # Environment for uwlogin.cern.ch
-echo $HOSTNAME|grep -q 'lxplus' || return
+echo $HOSTNAME|grep -q 'lxplus' || echo $HOSTNAME | grep -q "cmswmass" || return
 
 if [ -f /etc/bashrc ]; then
    . /etc/bashrc
@@ -20,7 +20,5 @@ export PATH=~/opt/texlive/bin/x86_64-linux:$PATH
 export PATH=/cms/sw/git/bin:$PATH
 export LD_LIBRARY_PATH=~/lib:$LD_LIBRARY_PATH
 export CPLUS_INCLUDE_PATH=~/include
-
-source /afs/cern.ch/project/eos/installation/cms/etc/setup.sh
 
 alias ls="ls --color=auto" 

@@ -11,10 +11,7 @@
     }
   }
 
-  // Load dotroot
-  gROOT->ProcessLineSync(".x $HOME/.root/dotrootInit.C");
-
   // Loads user-defined default style
-  dotrootImport("nsmith-/ROOTStyles");
-  gROOT->SetStyle("tdrStyle");
+  //dotrootImport("nsmith-/ROOTStyles");
+  //gROOT->SetStyle("tdrStyle");
 }
